@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scooters Pizza</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css"/>
+    <link rel="stylesheet" href="css/m.css"/>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3&sensor=true&language=en"></script>
+
+    <!--</script>-->
+</head>
+<body>
+
+<!-- Start of home page -->
+<div data-role="page" id="home" data-theme="a">
+
+    <div data-role="header" data-theme="a">
+        <h1>Scooters Pizza</h1>
+    </div>
+    <!-- /header -->
+
+
+    <div role="main" class="ui-content">
+        <h2>Click On the Logo!</h2>
+        <a href="http://www.cis217-3.syncease.com"><img src="img/pizza_logo.jpg"
+                                                        style="max-width:100px;max-height:100px;"></a>
+
+
+        <h1>Specialty Pizza Done Right</h1>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et erat quam. Pellentesque pretium quam ut
+            ullamcorper venenatis. Integer tempus metus ligula, quis dignissim nisi blandit sit amet. Duis vitae magna
+            iaculis, tincidunt quam id, aliquet urna. Aliquam rutrum leo sem, ut iaculis eros fringilla nec. Sed sit
+            amet congue dui. Vestibulum ac viverra risus. Nunc sit amet nulla vitae tellus dictum convallis accumsan et
+            ligula. Aliquam vitae pellentesque dui. Donec interdum ut lacus ut blandit. Morbi aliquet quis neque ut
+            tincidunt. Ut sit amet quam vulputate, porta odio et, sodales mi.</p>
+    </div>
+    <div class="controls" data-role="controlgroup" data-type="horizontal">
+
+        <a href="http://www.cis217-3.syncease.com"
+           data-ajax="false"
+           class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action">Full site</a>
+    </div>
+
+    <div role="main" class="ui-content">
+        <ul data-role="listview" data-inset="true">
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#info">Give Us a Ring</a></li>
+            <li><a href="#order">Order Stuff</a></li>
+            <li><a href="#about">Our Familia</a></li>
+            <li><a href="#basic-map" data-transition="pop">Locations</a></li>
+        </ul>
+
+    </div>
+    <!-- /content -->
+
+    <div data-role="footer" data-id="myfooter" data-position="fixed" data-theme="a">
+        <div class="controls" data-role="controlgroup" data-type="horizontal">
+            <a href="#home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home">Home</a>
+            <a href="#menu" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-search">Menu</a>
+            <a href="#info" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-info">Info</a>
+            <a href="http://www.cis217-3.syncease.com"
+               data-ajax="false"
+               class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action">Full site</a>
+        </div>
+    </div>
+    <!-- /footer -->
+
+</div>
+<!-- /page -->
+
+<!-- Start of Menu page -->
+
+<div data-role="page" id="menu" data-theme="a">
+
+    <div data-role="header" data-theme="a">
+        <h1>Scooters Pizza</h1>
+        <a href="#home" class="ui-btn ui-shadow ui-corner-all ui-btn-right ui-icon-home ui-btn-icon-notext">home</a>
+    </div>
+    <!-- /header -->
+
+    <div role="main" class="ui-content">
+        <h2>Menu Selection</h2>
+
+        <div data-role="collapsible-set">
+
+            <div data-role="collapsible">
+                <!--Used to open one of the selections automatically, data-collapsed="false"-->
+                <h3>Super Pepperoni</h3>
+
+                <p>Triple pepperoni and extra cheese...13.00...16.00</p>
+            </div>
+
+            <div data-role="collapsible">
+                <h3>Veggie</h3>
+
+                <p>Onions, green peppers, black olives,mushrooms, tomatoes and mozzarella...12.00...15.00</p>
+            </div>
+
+            <div data-role="collapsible">
+                <h3>Italian Sausage</h3>
+
+                <p>Pepperoni, salami, ham, onions and blackolives...14.00...17.00</p>
+            </div>
+
+            <div data-role="collapsible">
+                <h3>Chicago Style Deep Dish</h3>
+
+                <p> Meatballs, bacon, pepperoni, Italian sausage,ham and mozzarella...14.00...17.00</p>
+            </div>
+
+            <div data-role="collapsible">
+                <h3>Taco</h3>
+
+                <p>Ground beef, jalapeños, tomatoes and black olives topped with cheddar and
+                    mozzarella...13.00...16.00</p>
+            </div>
+
+            <div data-role="collapsible">
+                <h3>Buffalo Chicken</h3>
+
+                <p> Grilled chicken, onions and mozzarella over Buffalo sauce...14.00...17.00</p>
+            </div>
+
+            <div data-role="collapsible">
+                <h3>Calzones</h3>
+
+                <div data-role="collapsible-set">
+
+                    <div data-role="collapsible">
+                        <h3>Italian</h3>
+
+                        <p>Pepperoni, salami, ham, onions and black olives...10.00</p>
+                    </div>
+
+                    <div data-role="collapsible">
+                        <h3>Sausage & Peppers</h3>
+
+                        <p>Italian sausage with sautéed onions and green peppers...10.00</p>
+                    </div>
+                    <div data-role="collapsible">
+                        <h3>Veggie</h3>
+
+                        <p>Black olives, onions, green peppers,mushrooms and spinach...9.00</p>
+                    </div>
+                    <div data-role="collapsible">
+                        <h3>All Meat</h3>
+
+                        <p>Meatballs, bacon, pepperoni, Italian sausage and ham...10.00</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div data-role="collapsible">
+                <h3>Subs</h3>
+
+                <div data-role="collapsible-set">
+
+                    <div data-role="collapsible">
+                        <h3>Philly Cheesesteak</h3>
+
+                        <p>Sliced steak with sautéed onions and pepperscovered with cheese...7.50</p>
+                    </div>
+
+                    <div data-role="collapsible">
+                        <h3>Italian</h3>
+
+                        <p>Ham, salami, pepperoni, pepperoncini, blackolives, onions and Italian dressing baked
+                            withmozzarella and provolone cheese...7.00</p>
+                    </div>
+
+                    <div data-role="collapsible">
+                        <h3>Ham & Cheese</h3>
+
+                        <p>Honey-baked ham and provolone cheesebaked in the oven...6.50</p>
+                    </div>
+
+                    <div data-role="collapsible">
+                        <h3>Meatball</h3>
+
+                        <p>Meatballs baked with marinara sauce andmozzarella cheese...6.50</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div data-role="collapsible">
+                <h3>Beverages</h3>
+
+                <div data-role="collapsible-set">
+
+                    <div data-role="collapsible">
+                        <h3>Soda</h3>
+
+                        <p>Coke, Diet Coke, Iced Tea, Lemonade, Root Beer...1.00</p>
+                    </div>
+
+                    <div data-role="collapsible">
+                        <h3>Bottled Beer(Domestic)</h3>
+
+                        <p>Coors, Coors Light, Bud, Bud Light, Micholob, Miller...3.00</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <h4><a href="#home" data-direction="reverse">Back to Main Page</a></h4>
+    </div>
+    <!-- /content -->
+
+    <div data-role="footer" data-id="myfooter" data-position="fixed" data-theme="a">
+        <div class="controls" data-role="controlgroup" data-type="horizontal">
+            <a href="#home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home">Home</a>
+            <a href="#menu" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-search">Menu</a>
+            <a href="#info" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-info">Info</a>
+            <a href="http://www.cis217-3.syncease.com"
+               data-ajax="false"
+               class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action">Full site</a>
+        </div>
+    </div>
+    <!-- /footer -->
+</div>
+<!-- /page -->
+
+<!-- Start of Call Us page -->
+<div data-role="page" id="info" data-theme="a">
+
+    <div data-role="header" data-theme="a">
+        <h1>Scooters Pizza</h1>
+        <a href="#home" class="ui-btn ui-shadow ui-corner-all ui-btn-right ui-icon-home ui-btn-icon-notext">home</a>
+    </div>
+    <!-- /header -->
+
+    <div role="main" class="ui-content">
+        <h1>OK, Fine(Do it the Old Fasion Way)Give Scooters a Call Then</h1>
+
+        <h2>Northside</h2>
+
+        <h3>123 Main Street</h3>
+
+        <h3>Spokane, WA.</h3>
+
+        <h2><a href="tel:509-456-7690">509-456-7890</a></h2>
+
+        <h3><a href="tel:509-456-7690" data-role="button">Order from the Northside Store Now</a></h3>
+
+        <h2>Spokane Valley</h2>
+
+        <h3>123 Appleway Ave.</h3>
+
+        <h3>Spokane Valley, WA.</h3>
+
+        <h2><a href="tel:509-654-3210">509-654-3210</a></h2><br/>
+
+        <h3><a href="tel:509-654-3210" data-role="button">Order from the Valley Store Now</a></h3>
+
+        <h2>Scoooters Hours</h2>
+        <ul class="hours">
+            <li>Monday-Tuesday-Weds: 12noon to 11pm</li>
+            <li>Thurs-Friday-Saturday: 10am to 2am</li>
+            <li>Sunday: 10am to 10pm</li>
+        </ul>
+        <h4><a href="#home" data-direction="reverse">Back to Main Page</a></h4>
+    </div>
+    <!-- /content -->
+
+    <div data-role="footer" data-id="myfooter" data-position="fixed" data-theme="a">
+        <div class="controls" data-role="controlgroup" data-type="horizontal">
+            <a href="#home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home">Home</a>
+            <a href="#menu" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-search">Menu</a>
+            <a href="#info" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-info">Info</a>
+            <a href="http://www.cis217-3.syncease.com"
+               data-ajax="false"
+               class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action">Full site</a>
+        </div>
+    </div>
+    <!-- /footer -->
+</div>
+<!-- /page -->
+
+<!-- Start of Order Stuff page -->
+<div data-role="page" id="order" data-theme="a">
+
+<div data-role="header" data-theme="a">
+    <h1>Scooters Pizza</h1>
+    <a href="#home" class="ui-btn ui-shadow ui-corner-all ui-btn-right ui-icon-home ui-btn-icon-notext">home</a>
+</div>
+<!-- /header -->
+<h1>"Save Time" Place You Order Here!</h1>
+
+<div data-role="main" class="ui-content">
+    <form method="post" action="#order" data-ajax="false">
+
+        <label for="name">Name : <span>*</span></label>
+        <input type="text" name="name" id="name" placeholder="Name">
+
+        <label for="email">Email: <span>*</span></label>
+        <input type="email" id="email" name="email" placeholder="Email"/>
+
+        <label for="phone">Phone: <span>*</span></label>
+        <input type="tel" id="phone" name="phone" placeholder="Phone"/>
+
+        <label for="address">Address: <span>*</span></label>
+        <input id="address" name="address" placeholder="Address"/>
+
+        <label for="city">City: <span>*</span></label>
+        <input type="city" id="city" name="city" placeholder="City"/>
+
+        <label for="state">State: <span>*</span></label>
+        <input type="state" id="state" name="state" placeholder="State"/>
+
+        <h3>Make your Order Selections Here!</h3>
+        <fieldset data-role="controlgroup">
+            <legend>Specialty Pizza</legend>
+            <label for="topping_1">Toppings</label>
+            <select name="toppings" data-native-menu="false" multiple="multiple" id="topping_1">
+                <option>Specialty Pizza</option>
+                <option value="pep">Super Pepperoni</option>
+                <option value="vgi">Veggie</option>
+                <option value="its">Italian Sausage</option>
+                <option value="cdd">Chicago Style Deep Dish</option>
+                <option value="bac">Taco</option>
+                <option value="grb">Buffalo Chicken</option>
+            </select>
+        </fieldset>
+
+        <fieldset data-role="controlgroup">
+            <legend>Calzones</legend>
+            <label for="zones">Calzones</label>
+            <select name="zones" data-native-menu="false" multiple="multiple" id="zones">
+                <option>Calzones</option>
+                <option value="sap">Sausage & Peppers</option>
+                <option value="amt">All Meat</option>
+                <option value="veg">Veggie</option>
+                <option value="its">Italian</option>
+            </select>
+        </fieldset>
+
+        <fieldset data-role="controlgroup">
+            <legend>Subs</legend>
+            <label for="subs">Subs</label>
+            <select name="subs" data-native-menu="false" multiple="multiple" id="subs">
+                <option>Subs</option>
+                <option value="pep">Philly Cheesesteak</option>
+                <option value="its">Italian</option>
+                <option value="tom">Ham & Cheese</option>
+                <option value="bac">Meatball</option>
+            </select>
+        </fieldset>
+
+        <fieldset data-role="controlgroup">
+            <legend>Pie Particulars:</legend>
+
+            <label for="crust">Crust</label>
+            <select name="crust" id="crust">
+                <option>Crust Type</option>
+                <option value="dish">Deep Dish</option>
+                <option value="thk">Thick Crust</option>
+                <option value="grm">Gourmet Crust</option>
+                <option value="thin">Thin Crust</option>
+            </select>
+
+            <label for="sauce">Sauce</label>
+            <select name="sauce" id="sauce">
+                <option>Sauce Type</option>
+                <option value="red">Mediterranean Sauce</option>
+                <option value="wht">White Sauce</option>
+                <option value="bbq">BBQ Sauce</option>
+            </select>
+
+            <label for="toppings">Toppings</label>
+            <select name="toppings" data-native-menu="false" multiple="multiple" id="toppings">
+                <option>Extra Toppings</option>
+                <option value="pep">Pepperoni</option>
+                <option value="blo">Black Olives</option>
+                <option value="gro">Green Olives</option>
+                <option value="oni">Onions</option>
+                <option value="mus">Mushrooms</option>
+                <option value="its">Italian Sausage</option>
+                <option value="tom">Tomatoes</option>
+                <option value="bac">Bacon</option>
+                <option value="grb">Ground Beef</option>
+                <option value="sal">Salami</option>
+                <option value="ham">Ham</option>
+
+            </select>
+        </fieldset>
+
+        <fieldset data-role="controlgroup">
+            <legend>How you Gittin It?:</legend>
+            <label for="pic">Pick Up</label>
+            <input type="radio" name="method" id="pic" value="pic">
+            <label for="del">Delivery</label>
+            <input type="radio" name="method" id="del" value="del">
+        </fieldset>
+
+        <label for="mess">Message:</label>
+        <textarea name="mess" id="mess" placeholder="Message"></textarea>
+
+        <input type="submit" data-inline="true" value="Submit" data-theme="b">
+    </form>
+    <h4><a href="#home" data-direction="reverse">Back to Main Page</a></h4>
+    <!--<p><a href="http://www.formget.com/app/"><img src="formget-fugo.jpg" /></a></p>-->
+</div>
+<!--Shopping Cart HTML-->
+
+<div data-role="content">
+    <div data-product="100" class="product">
+        <span data-name='superpepperoni'>Super Pepperoni</span>
+        <span data-price='16.00'>16.00</span>
+        <span class='description'>Triple pepperoni and extra cheese</span>
+    </div>
+</div>
+
+<div data-role="content">
+    <div data-product="101" class="product">
+        <span data-name='veggie'>Veggie</span>
+        <span data-price='15.00'>15.00</span>
+        <span class='description'>Onions, green peppers, black olives,mushrooms, tomatoes and mozzarella</span>
+    </div>
+</div>
+
+<div data-role="content">
+    <div data-product="102" class="product">
+        <span data-name='italiansausage'>Italian Sausage</span>
+        <span data-price='17.00'>17.00</span>
+        <span class='description'>Pepperoni, salami, ham, onions and blackolives</span>
+    </div>
+
+    <div id='cartDiv'>
+
+    </div>
+    <div>
+        <p>
+            <button id="buy">Buy Now</button>
+        </p>
+    </div>
+</div>
+<!--Shopping Cart JS-->
+<script>
+    var cart = [];
+
+    function displayCart() {
+        var cartDiv = $('#cartDiv');
+        cartDiv.html("");
+        var grandTotal = 0;
+        for (var item in cart) {
+            var qty = cart[item].qty;
+            var price = cart[item].price;
+            var subtotal = qty * price;
+            grandTotal += subtotal;
+            cartDiv.append('<p>' + qty + ': ' + cart[item].name +
+                    ' $' + price.toFixed(2) + ' == $' +
+                    subtotal.toFixed(2) + '</p>')
+        }
+
+        cartDiv.append('<p>Grand Total: $' + grandTotal.toFixed(2) + '</p>')
+    }
+
+    $(document).ready(function () {
+        // Add a buy button to each of my products
+
+        $('div[data-product]').each(function () {
+            $(this).append('<button class="btnCart">Add To Cart</button>');
+        })
+        $('.btnCart').on("click", function (event) {
+            var pid = $(this).parent().parent().data("product");
+            console.log(pid);
+            if (cart[pid]) {
+                cart[pid].qty += 1;
+            } else {
+                cart[pid] = new Object();
+                cart[pid].qty = 1;
+                cart[pid].name = $(this).parent().siblings("span").data("name");
+                cart[pid].price = $(this).parent().siblings("span").next().data("price");
+            }
+            displayCart();
+        })
+
+        $('#buy').on("click", function (event) {
+            var buyUrl = "";
+            for (var item in cart) {
+                var qty = cart[item].qty;
+                buyUrl += "&pid[]=" + item + "&qty[]=" + cart[item]
+            }
+            $.getJSON('buy.php?' + buyUrl, function (data) {
+                $("#cartDiv"), append(data);
+
+            })
+
+            console.log("http://www.cis217-3.syncease.com/buy.php?" + buyUrl);
+            $("#buy").parent().hide();
+        })
+    })
+</script>
+
+<!--End of Shopping Cart-->
+
+<div data-role="footer" data-id="myfooter" data-position="fixed" data-theme="a">
+    <div class="controls" data-role="controlgroup" data-type="horizontal">
+        <a href="#home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home">Home</a>
+        <a href="#menu" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-search">Menu</a>
+        <a href="#info" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-info">Info</a>
+        <a href="http://www.cis217-3.syncease.com"
+           data-ajax="false"
+           class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action">Full site</a>
+    </div>
+</div>
+<!-- /footer -->
+
+</div>
+<!-- /page -->
+
+<!-- Start of Our Familia page -->
+<div data-role="page" id="about" data-theme="a">
+
+    <div data-role="header" data-theme="a">
+        <h1>Scooters Pizza</h1>
+        <a href="#home" class="ui-btn ui-shadow ui-corner-all ui-btn-right ui-icon-home ui-btn-icon-notext">home</a>
+    </div>
+    <!-- /header -->
+
+    <div role="main" class="ui-content">
+        <h2>All about Scooters</h2>
+
+        <p>Louie and Anna Mae Macinanti opened the doors of their pizza shop in 1952, a year after they were married, in
+            the north end of Spokane, WA, just down the street from where Louie grew up with his ten sisters and
+            brothers. He didn’t have to go far from home to become the successful man he is today.
+            </br>The secret has always been the fresh dough made every morning, homemade sauce, the finest cheeses, and
+            freshly cut quality meats and vegetables. Preparation, time and perfection have always been the basis of
+            Louie’s Pizza and it is what has made it stand out for almost 60 years. You will be able to taste the
+            difference in your first bite!
+            </br>Today, Louie’s Pizza still stands in the same location where it started. It is now proudly run by
+            Louie’s two grandson’s Derek & Randy Macinanti and they have expanded the hours and menu. Although times
+            have changed, the one constant of Louie’s Pizza still remains and that is making the dough fresh every
+            morning and closing shop when it is gone. In order to accommodate our customers, Louie’s Pizza would like to
+            remind you that they only make a certain amount of dough each day and that the pizza sometimes does “sell
+            out” fast so to avoid missing out on a pizza, simply call and reserve one for a specific time. We like to
+            call it “call ahead pizza.”</p>
+        <h4><a id="feature"
+               href="http://www.vidsplay.com/vids/pizza.mp4"
+               onClick="window.open(this.href,'popupwindow','width=500,height=250,location,scrollbars,resizable'); return false;"
+               title="take virtual library tour">Make your mouth Water "HERE" with our Virtual Pizza Tour</a></h4>
+
+        <div data-role="fieldcontain">
+            <label for="textarea-a">Drop Us a Comment:</label>
+            <textarea name="textarea"
+                      id="textarea-a"
+                      placeholder="We'd Love to hear from you! Leave us a message about our Pizzaria."></textarea>
+            <input type="submit" data-inline="true" value="Submit" data-theme="b">
+        </div>
+        <h4><a href="#home" data-rel="back">Back to Main Page</a></h4>
+    </div>
+    <!-- /content -->
+
+    <div data-role="footer" data-id="myfooter" data-position="fixed" data-theme="a">
+        <div class="controls" data-role="controlgroup" data-type="horizontal">
+            <a href="#home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home">Home</a>
+            <a href="#menu" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-search">Menu</a>
+            <a href="#info" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-info">Info</a>
+            <a href="http://www.cis217-3.syncease.com"
+               data-ajax="false"
+               class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action">Full site</a>
+        </div>
+    </div>
+    <!-- /footer -->
+
+</div>
+<!-- /page -->
+
+<!--Start of Locations page -->
+<div data-role="page" id="basic-map" data-theme="a">
+    <div id="header" data-role="header" data-position="fixed" data-id="head">
+
+        <!--<div id="basic-map" data-role="page" data-theme="a">-->
+        <!--<div data-role="header" data-theme="a">-->
+        <h1><a data-ajax="false" href="/"></a>Scooters Pizza</h1>
+        <a href="#home" class="ui-btn ui-shadow ui-corner-all ui-btn-right ui-icon-home ui-btn-icon-notext">home</a>
+    </div>
+    <!--header-->
+    <div data-role="fieldcontain" class="ui-content">
+        <h1>Where is Scooters Pizza?</h1>
+
+        <div data-role="fieldcontain" data-theme="a">
+            <p>
+                <script>
+                    navigator.geolocation.getCurrentPosition(function (pos) {
+                        var lat = pos.coords.latitude;
+                        var lng = pos.coords.longitude;
+                        console.log(lat + ":" + lng);
+                        $("#lat").text(lat);
+                        $("#lng").text(lng);
+//                    var url='<a href="http://maps.google.com/maps?q=' + lat + "," + lng + '">Your Location</a>';
+//                    saddr=??? & daddr=???
+
+                        var url = '<a href="http://maps.google.com/maps?daddr=Petes+Pizza+821+E+Sharp+Ave+Spokane+WA+99202&saddr=' + lat + "," + lng + '">Your Location</a>';
+                        $("#url").html(url);
+
+                        var map = '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2686.755655089901!2d-117.39700300000001!3d47.669743000000004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x547ce028f10a14e4!2sPete&#39;s+Pizza!5e0!3m2!1sen!2sus!4v1407470008836&saddr=' + lat + "," + lng + '" width="350" height="450" frameborder="0" style="border:0"></iframe>'
+                        $("#location-map").html(map);
+
+                    })
+                </script>
+                <!--Latitude: <span id="lat"></span><br/>-->
+                <!--Longitude: <span id="lng"></span>-->
+                <!--Url: <span id="url"></span>-->
+
+                <!--Display Actual Map-->
+            <div id="location-map"></div>
+
+
+            </p>
+        </div>
+        <div data-role="footer" data-id="myfooter" data-position="fixed" data-theme="a">
+            <div class="controls" data-role="controlgroup" data-type="horizontal">
+                <a href="#home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home">Home</a>
+                <a href="#menu" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-search">Menu</a>
+                <a href="#info" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-info">Info</a>
+                <a href="http://www.cis217-3.syncease.com"
+                   data-ajax="false"
+                   class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action">Full site</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

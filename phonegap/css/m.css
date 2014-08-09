@@ -1,0 +1,76 @@
+/*custom styles for jquery mobile*/
+.ui-mobile [data-role="page"] {
+    background-color: #fff;
+}
+
+.controls {
+    text-align: center;
+}
+
+.controls * {
+    margin: 0 auto;
+}
+
+.ui-mobile [data-role=header], .ui-mobile [data-role=footer] {
+    background-color: rgba(226, 1, 0, 0.99);
+    color: beige;
+    text-shadow: 1px 1px 12px #000;
+    font-size: 30px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+
+}
+
+form label, legend {
+    color: #123456;
+}
+
+p {
+    margin-left: 2em;
+    text-align: left;
+}
+
+span {
+    color: #030303;
+    text-align: left;
+}
+
+h1 {
+    margin-left: 1.5em;
+    color: #030303;
+}
+
+h2 {
+    margin-left: 2em;
+}
+
+h3 {
+    margin-left: 2em;
+    text-align: left;
+}
+
+h4 {
+    text-align: center;
+}
+
+/*.segmented-control { text-align:center; }*/
+/*.segmented-control .ui-controlgroup { display:inline; margin:.2em 0px; }*/
+/*#map-page { width:100%; height:100%; }*/
+/*#map-canvas { width:100%; height:100%; margin-top:-30px; padding:0px!important; }*/
+/*#gmap-marker-link { color:#00a0df; text-decoration:none; }*/
+/*.ui-gmap-canvas { width:100%; height:100%; }*/
+/*.ui-gmap-infobox { display:none; }*/
+/*#show-more .ui-li-heading { text-align:center; }*/
+/*#show-more .ui-icon { visibility:hidden; }*/
+/*.ui-li-has-count .ui-li-count { border-color:transparent; }*/
+/*.wrap { white-space:normal; }*/
+.ui-field-contain {
+    text-align: center;
+}
+
+.ui-field-contain {
+    width: auto;
+}
