@@ -518,7 +518,50 @@
 </div>
 <!-- /page -->
 
-<!-- Start of Our Familia page -->
+<!-- Start of Camera page -->
+
+<div data-role="page" id="camera" data-theme="a">
+
+    <div data-role="header" data-theme="a">
+        <h1>Scooters Pizza</h1>
+        <a href="#home" class="ui-btn ui-shadow ui-corner-all ui-btn-right ui-icon-home ui-btn-icon-notext">home</a>
+    </div>
+    <div role="main" class="ui-content">
+        <h1>Picture Perfect Pie's</h1>
+        <!-- /header -->
+
+        <div id="camera_page">
+            <button class="camera-control" onclick="capturePhoto();">Capture Photo</button>
+
+            <div style="text-align:center;margin:20px;">
+                <img id="cameraPic" src="" style="width:auto;height:120px;"></img>
+            </div>
+        </div>
+
+        <script>
+
+            function capturePhoto() {
+                navigator.camera.getPicture(uploadPhoto, null, {sourceType: 1, quality: 60});
+            }
+
+        </script>
+
+        <!-- /content -->
+
+        <div data-role="footer" data-id="myfooter" data-position="fixed" data-theme="a">
+            <div class="controls" data-role="controlgroup" data-type="horizontal">
+                <a href="#home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home">Home</a>
+                <a href="#menu" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-search">Menu</a>
+                <a href="#info" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-info">Info</a>
+                <a href="http://www.cis217-3.syncease.com"
+                   data-ajax="false"
+                   class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action">Full site</a>
+            </div>
+        </div>
+
+        <!-- /footer -->
+
+        <!-- Start of Our Familia page -->
 <div data-role="page" id="about" data-theme="a">
 
     <div data-role="header" data-theme="a">
