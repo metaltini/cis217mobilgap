@@ -1,68 +1,95 @@
 /**
  * Created by Pete Stein on 8/14/14.
  */
-var pictureSource;
-var destinationType;
+var camera = {
 
-function updateCameraStatus(status) {
-    $("#cameraStatus").html(status);
-}
+    pictureSource: new Object(),
 
-function photoOnFail(message) {
-    updateCameraStatus("ERROR: " + message);
-}
+    destinationType: new Object(),
 
-function onPhotoDataSuccess(imageData) {
-    $("#popImage").attr("src", "data:image/jpeg;base64," + imageData);
-    $("#popupPhoto").popup("open");
-}
+    // Application Constructor
+    initialize: function () {
 
-function onPhotoURISuccess(imageURI) {
-    $("#popImage").attr("src", imageURI);
-    //$("#pictBox").empty();
-    //$("#pictBox").append(imageURI).trigger("create");
-    $("#pictBox").html(imageURI);
-    updateCameraStatus("SUCCESS: Image loaded");
-    $("#popupPhoto").popup("open");
-}
+        //alert('Camera Initialized');
 
-function capturePhoto() {
-    navigator.camera.getPicture(onPhotoURISuccess, photoOnFail, { quality: 50, destinationType: destinationType.FILE_URI });
-}
+        this.pictureSource = navigator.camera.PictureSourceType;
 
-//Android ignores the allowEdit parameter
-function capturePhotoEdit() {
-    navigator.camera.getPicture(onPhotoDataSuccess, photoOnFail, { quality: 20, allowEdit: true, destinationType: destinationType.DATA_URL });
-}
+        this.destinationType = navigator.camera.DestinationType;
 
-//source could be Camera.PictureSourceType.PHOTOLIBRARY and SAVEDPHOTOALBUM, in Android, they are the same.
-function getPhoto(source) {
-    updateCameraStatus("");
-    navigator.camera.getPicture(onPhotoURISuccess, photoOnFail, { quality: 50, destinationType: destinationType.FILE_URI, sourceType: source });
-}
+    },
 
-function getCameraReady() {
-    $("popupPhoto").popup("close");
-    updateCameraStatus("");
-    pictureSource = navigator.camera.PictureSourceType;
-    destinationType = navigator.camera.DestinationType;
+    // Called when a photo is successfully retrieved
+    //
+    onPhotoDataSuccess: function (imageData) {
 
-    $('#capturePhoneButton').on('vclick', function (e) {
-        e.preventDefault();
-        capturePhoto();
-        return false;
-    });
+        // Uncomment to view the base64-encoded image data
+        //alert(imageData);
 
-    $('#fromPhotoLibraryButton').on('vclick', function (e) {
-        e.preventDefault();
-        getPhoto(pictureSource.PHOTOLIBRARY);
-        return false;
-    });
-}
+        // Get image handle
+        //
+        var smallImage = document.getElementById('smallImage');
 
-//*********************************************************
-// initialize the environment
-//*********************************************************
-$("#cameraMainPage").bind("pagebeforeshow", function () {
-    getCameraReady();
-});
+        // Unhide image elements
+        //
+        smallImage.style.display = 'block';
+
+        // Show the captured photo
+        // The in-line CSS rules are used to resize the image
+        //
+        smallImage.src = "data:image/jpeg;base64," + imageData;
+    },
+
+    // Called when a photo is successfully retrieved
+    //
+    onPhotoURISuccess: function (imageURI) {
+        // Uncomment to view the image file URI
+        //alert(imageURI);
+
+        // Get image handle
+        //
+        var largeImage = document.getElementById('largeImage');
+
+        // Unhide image elements
+        //
+        largeImage.style.display = 'block';
+
+        // Show the captured photo
+        // The in-line CSS rules are used to resize the image
+        //
+        largeImage.src = imageURI;
+    },
+
+    // A button will call this function
+    //
+    capturePhoto: function () {
+
+        //alert('capture photo');
+
+        // Take picture using device camera and retrieve image as base64-encoded string
+        navigator.camera.getPicture(this.onPhotoDataSuccess, this.onFail, { quality: 50,
+            destinationType: this.destinationType.DATA_URL });
+    },
+
+    // A button will call this function
+    //
+    capturePhotoEdit: function () {
+        // Take picture using device camera, allow edit, and retrieve image as base64-encoded string
+        navigator.camera.getPicture(this.onPhotoDataSuccess, this.onFail, { quality: 20, allowEdit: true,
+            destinationType: this.destinationType.DATA_URL });
+    },
+
+    // A button will call this function
+    //
+    getPhoto: function (source) {
+        // Retrieve image file location from specified source
+        navigator.camera.getPicture(this.onPhotoURISuccess, this.onFail, { quality: 50,
+            destinationType: this.destinationType.FILE_URI,
+            sourceType: source });
+    },
+
+    // Called if something bad happens.
+    //
+    onFail: function (message) {
+        //alert('Failed because: ' + message);
+    }
+};
