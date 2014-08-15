@@ -634,19 +634,19 @@
                     navigator.geolocation.getCurrentPosition(function (pos) {
                         var lat = pos.coords.latitude;
                         var lng = pos.coords.longitude;
-                        console.log(lat + ":" + lng);
-                        $("#lat").text(lat);
-                        $("#lng").text(lng);
+//                        console.log(lat + ":" + lng);
+//                        $("#lat").text(lat);
+//                        $("#lng").text(lng);
 //                    var url='<a href="http://maps.google.com/maps?q=' + lat + "," + lng + '">Your Location</a>';
 //                    saddr=??? & daddr=???
 
-                        var url = '<a href="http://maps.google.com/maps?daddr=Petes+Pizza+821+E+Sharp+Ave+Spokane+WA+99202&saddr=' + lat + "," + lng + '">Your Location</a>';
-                        $("#url").html(url);
+//                        var url = '<a href="http://maps.google.com/maps?daddr=Petes+Pizza+821+E+Sharp+Ave+Spokane+WA+99202&saddr=' + lat + "," + lng + '">Your Location</a>';
+//                        $("#url").html(url);
 
                         var map = '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2686.755655089901!2d-117.39700300000001!3d47.669743000000004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x547ce028f10a14e4!2sPete&#39;s+Pizza!5e0!3m2!1sen!2sus!4v1407470008836&saddr=' + lat + "," + lng + '" width="350" height="450" frameborder="0" style="border:0"></iframe>'
                         $("#location-map").html(map);
 
-                    })
+                    });
                 </script>
                 <!--Latitude: <span id="lat"></span><br/>-->
                 <!--Longitude: <span id="lng"></span>-->
