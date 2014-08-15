@@ -577,6 +577,10 @@
                     navigator.geolocation.getCurrentPosition(function (pos) {
                         var lat = pos.coords.latitude;
                         var lng = pos.coords.longitude;
+
+                        var url = '<a href="http://maps.google.com/maps?daddr=Petes+Pizza+821+E+Sharp+Ave+Spokane+WA+99202&saddr=' + lat + "," + lng + '">Your Location</a>';
+                        $("#url").html(url);
+
                         var map = '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;saddr=' + lat.toString() + ',' + lng.toString() + '&amp;hl=en&amp;geocode=&amp;q=Petes+Pizza,+West+Northwest+Boulevard,+Spokane,+WA&amp;aq=0&amp;oq=Pete&amp;sll=47.655025,-117.244849&amp;sspn=0.139912,0.308647&amp;ie=UTF8&amp;hq=Petes+Pizza,&amp;hnear=W+Northwest+Blvd,+Spokane,+Washington&amp;t=m&amp;ll=47.684148,-117.446098&amp;spn=0.010996,0.025525&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Petes+Pizza,+West+Northwest+Boulevard,+Spokane,+WA&amp;aq=0&amp;oq=Pete&amp;sll=47.655025,-117.244849&amp;sspn=0.139912,0.308647&amp;ie=UTF8&amp;hq=Petes+Pizza,&amp;hnear=W+Northwest+Blvd,+Spokane,+Washington&amp;t=m&amp;ll=47.684148,-117.446098&amp;spn=0.010996,0.025525" style="color:#0000FF;text-align:left">View Larger Map</a></small>'
                         $("#location-map").html(map);
 
